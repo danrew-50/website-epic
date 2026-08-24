@@ -1,4 +1,4 @@
-# Premium Client Website — Fast Approval Base
+# Danrew-50 Website, Made by Naman Aggarwal
 
 A polished multi-page static website base designed for rapid client approval and fast final delivery.
 
