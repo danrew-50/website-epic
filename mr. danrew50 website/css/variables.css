@@ -1,0 +1,34 @@
+:root{
+  --bg:#f3f0e8;
+  --bg-soft:#e9e5dc;
+  --paper:#fbfaf7;
+  --ink:#11110f;
+  --muted:#6f6d66;
+  --line:rgba(17,17,15,.16);
+  --accent:#c94b32;
+  --accent-deep:#9f3524;
+  --green:#173f3a;
+  --white:#fff;
+  --max:1440px;
+  --gutter:clamp(18px,3vw,48px);
+  --ease:cubic-bezier(.2,.75,.18,1);
+  --fast:180ms;
+  --med:420ms;
+  --slow:800ms;
+  --sans:Arial,Helvetica Neue,Helvetica,sans-serif;
+  --serif:Georgia,Times New Roman,serif;
+  --mono:"IBM Plex Mono",Consolas,monospace;
+  --shadow:0 30px 80px rgba(17,17,15,.10);
+}
+html[data-theme="dark"]{
+  --bg:#11110f;
+  --bg-soft:#181815;
+  --paper:#1c1c18;
+  --ink:#f3f0e8;
+  --muted:#aaa69d;
+  --line:rgba(243,240,232,.18);
+  --accent:#ff7558;
+  --accent-deep:#ff8d74;
+  --green:#91b6ad;
+  --shadow:0 30px 90px rgba(0,0,0,.34);
+}

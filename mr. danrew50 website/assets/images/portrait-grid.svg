@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500">
+<rect width="1200" height="1500" fill="#11110f"/>
+<rect x="70" y="70" width="1060" height="1060" fill="#d6d0c6"/>
+<circle cx="600" cy="565" r="240" fill="#173f3a"/>
+<circle cx="600" cy="565" r="125" fill="#d44f33"/>
+<path d="M170 1220H1030" stroke="#d44f33" stroke-width="7"/>
+<text x="85" y="1370" fill="#f3f0e8" font-family="monospace" font-size="22" letter-spacing="5">INDEPENDENT PRACTICE / 2026</text>
+</svg>
