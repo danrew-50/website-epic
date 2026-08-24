@@ -1,0 +1,8 @@
+STUDIO NAME / TEMPORARY TYPOGRAPHY
+
+DISPLAY  DM Serif Display
+HEADING  DM Sans 600 / 700
+BODY     DM Sans 400 / 500
+UTILITY  IBM Plex Mono 400 / 500
+
+These are temporary web-safe choices and can be swapped later.

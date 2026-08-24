@@ -1,0 +1,78 @@
+/* Final polish layer — visual tuning + theme safety + responsive finish */
+:root{
+  --green:#153f3a;
+  --accent:#c64a32;
+  --surface-lift:color-mix(in srgb,var(--paper) 78%,var(--bg));
+  --soft-shadow:0 18px 60px color-mix(in srgb,#000 10%,transparent);
+}
+html[data-theme="dark"]{
+  --green:#173e39;
+  --accent:#ff7356;
+  --surface-lift:#20201b;
+}
+
+/* header stays crisp instead of turning into a floating pill */
+.site-header{backdrop-filter:blur(14px) saturate(110%);background:color-mix(in srgb,var(--bg) 82%,transparent);}
+.site-header::after{content:"";display:block;position:absolute;left:var(--gutter);right:var(--gutter);bottom:-1px;height:1px;background:linear-gradient(90deg,transparent,var(--line) 18%,var(--line) 82%,transparent);}
+.icon-button{transition:transform .25s var(--ease),border-color .25s var(--ease),background .25s var(--ease)}
+.icon-button:hover{transform:translateY(-2px);background:var(--surface-lift)}
+
+/* signature line */
+.signature-rail{position:fixed;left:16px;top:50%;transform:translateY(-50%);z-index:20;display:flex;flex-direction:column;align-items:center;gap:10px;mix-blend-mode:normal;pointer-events:none}
+.signature-rail__line{width:1px;height:72px;background:var(--line);position:relative;overflow:hidden}
+.signature-rail__line::after{content:"";position:absolute;left:0;top:0;width:100%;height:34%;background:var(--accent);transition:transform .45s var(--ease)}
+.signature-rail__code{font:9px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);writing-mode:vertical-rl;transform:rotate(180deg)}
+
+/* art direction: cleaner frame + less fake-card feel */
+.hero-art,.work-visual,.case-hero__visual,.case-grid>div{box-shadow:var(--soft-shadow)}
+.hero-art{border:1px solid color-mix(in srgb,var(--line) 88%,transparent)}
+.hero-art__panel{box-shadow:0 12px 30px rgba(0,0,0,.10)}
+.work-card__meta{border-top:1px solid var(--line);margin-top:14px;padding-top:12px}
+.work-card__meta .title{letter-spacing:-.04em}
+.work-card__meta p{font-size:13px}
+
+/* make active interaction feel intentional, not ornamental */
+.text-link,.button,.filter-button{position:relative;overflow:hidden}
+.text-link::after{content:"";position:absolute;left:0;bottom:-1px;width:100%;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.text-link:hover::after{transform:scaleX(1)}
+.filter-button{transition:background .25s var(--ease),color .25s var(--ease),transform .25s var(--ease)}
+.filter-button:hover{transform:translateY(-2px)}
+
+/* stronger dark-mode contrast for large bands */
+.quote-band{background:var(--green);color:#f1eee5}
+html[data-theme="dark"] .quote-band{background:#173e39;color:#f3f0e8}
+html[data-theme="dark"] .quote-band cite{color:rgba(243,240,232,.66)}
+html[data-theme="dark"] .marquee{background:#0c0c0b;color:#f3f0e8}
+html[data-theme="dark"] .hero-art{background:#0b0b0a}
+html[data-theme="dark"] .hero-art__panel{background:rgba(29,29,25,.94);color:#f3f0e8;border-color:rgba(243,240,232,.16)}
+
+/* paper / utility surfaces */
+.proof-card:hover,.process-step:hover{box-shadow:0 12px 35px color-mix(in srgb,#000 7%,transparent);}
+.nav.is-open{backdrop-filter:blur(16px)}
+
+/* scroll progress */
+.scroll-progress{position:fixed;left:0;top:0;width:100%;height:2px;background:var(--accent);transform-origin:0 50%;z-index:100;pointer-events:none}
+
+/* no accidental hidden body copy on very small screens */
+@media(max-width:900px){
+  .signature-rail{display:none}
+  .hero-grid{gap:28px}
+  .hero-art{box-shadow:0 22px 54px color-mix(in srgb,#000 12%,transparent)}
+  .hero-art__index,.hero-art__label{font-size:9px}
+  .section-head{gap:20px}
+}
+@media(max-width:600px){
+  .site-header::after{left:16px;right:16px}
+  .hero-art{margin-top:28px}
+  .hero-art__panel{right:12px;top:12px;width:min(48vw,190px);height:auto;min-height:78px}
+  .hero-art__panel::after{max-width:150px}
+  .folio-strip{display:grid;grid-template-columns:1fr auto;row-gap:8px;font-size:8px}
+  .folio-strip span:first-child{grid-column:1/-1}
+  .work-card__meta{align-items:flex-start}
+  .work-card__index{font-size:9px}
+  .cta{box-shadow:0 18px 48px color-mix(in srgb,#000 12%,transparent)}
+}
+@media(prefers-reduced-motion:reduce){
+  .marquee__track,.hero-art::before,.hero-art__shape{animation:none!important}
+  .icon-button,.filter-button,.process-step,.proof-card,.button,.work-visual__art{transition:none!important}
+}
