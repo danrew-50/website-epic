@@ -1,8 +1,0 @@
-STUDIO NAME / TEMPORARY PALETTE
-
-INK        #171714
-WARM PAPER #F4F1EB
-FOREST     #183B37
-RED        #C7462F
-
-Replace these values with the final brand palette when approved.
